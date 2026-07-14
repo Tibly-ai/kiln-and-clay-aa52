@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The full gallery of Kiln & Clay Ceramics — handmade mugs, bowls, plates, vases, and vessels, thrown on the wheel and fired in our Portland studio kiln.">
+<title>Gallery — Kiln &amp; Clay Ceramics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#b4664a;
+    --clay-dark:#8f4c35;
+    --cream:#faf6f0;
+    --sand:#f1e8dc;
+    --ink:#3a2f2a;
+    --ink-soft:#6f6259;
+    --sage:#8a9a7b;
+    --line:#e5d9ca;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.15}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;letter-spacing:.01em}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50% 50% 46% 46%/60% 60% 40% 40%;
+    background:linear-gradient(160deg,var(--clay) 0%,var(--clay-dark) 100%);
+    position:relative;flex-shrink:0;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;top:6px;left:8px;width:10px;height:5px;
+    border-radius:50%;background:rgba(255,255,255,.35);
+  }
+  nav ul{display:flex;gap:6px;list-style:none}
+  nav a{
+    padding:8px 14px;border-radius:999px;font-size:.95rem;font-weight:500;
+    color:var(--ink-soft);transition:background .2s,color .2s;
+  }
+  nav a:hover{background:var(--sand);color:var(--ink)}
+  nav a.active{background:var(--clay);color:#fff}
+  @media(max-width:620px){
+    .nav{flex-direction:column;gap:10px;padding:14px 16px}
+    nav a{padding:7px 11px;font-size:.9rem}
+  }
+
+  /* ---------- Page hero ---------- */
+  .page-hero{
+    background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%);
+    border-bottom:1px solid var(--line);
+    text-align:center;
+    padding:70px 24px 60px;
+  }
+  .kicker{
+    display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--clay-dark);
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;margin-bottom:18px;
+  }
+  .page-hero h1{font-size:clamp(2.1rem,4.6vw,3rem);margin-bottom:14px}
+  .page-hero p{color:var(--ink-soft);font-size:1.08rem;max-width:58ch;margin:0 auto}
+
+  /* jump links */
+  .jump{
+    display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px;
+  }
+  .jump a{
+    padding:9px 18px;border-radius:999px;font-size:.9rem;font-weight:600;
+    background:#fff;border:1.5px solid var(--clay);color:var(--clay-dark);
+    transition:background .2s,color .2s;
+  }
+  .jump a:hover{background:var(--clay);color:#fff}
+
+  /* ---------- Sections ---------- */
+  section{padding:66px 0}
+  section+section{padding-top:0}
+  .section-head{text-align:center;max-width:620px;margin:0 auto 44px}
+  .section-head h2{font-size:clamp(1.6rem,3.2vw,2.1rem);margin-bottom:10px}
+  .section-head p{color:var(--ink-soft)}
+
+  /* ---------- Gallery grid ---------- */
+  .grid-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .piece{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:transform .2s,box-shadow .2s;position:relative;
+  }
+  .piece:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(58,47,42,.1)}
+  .piece-img{
+    height:210px;display:flex;align-items:flex-end;justify-content:center;
+    padding-bottom:26px;
+  }
+  .p1{background:linear-gradient(165deg,#f4e9dc,#e3cfba)}
+  .p2{background:linear-gradient(165deg,#e9ede3,#cdd6c2)}
+  .p3{background:linear-gradient(165deg,#f6e3d7,#e6bfa8)}
+  .p4{background:linear-gradient(165deg,#eee7dd,#d6c6ae)}
+  .p5{background:linear-gradient(165deg,#e7e2da,#c3bbae)}
+  .p6{background:linear-gradient(165deg,#f2e7de,#dcc2b0)}
+  .p7{background:linear-gradient(165deg,#ece9e0,#cfd4c4)}
+  .p8{background:linear-gradient(165deg,#f5ece0,#e0cdb1)}
+  .p9{background:linear-gradient(165deg,#efe3da,#d9bda9)}
+
+  .mini{position:relative}
+  .mini::after{
+    content:"";position:absolute;bottom:-9px;left:12%;right:12%;height:8px;
+    background:radial-gradient(ellipse at center,rgba(58,47,42,.16),transparent 70%);
+    border-radius:50%;
+  }
+  .mini span{
+    position:absolute;top:14%;left:18%;width:26%;height:12%;
+    background:rgba(255,255,255,.32);border-radius:50%;filter:blur(2px);
+  }
+  /* vessel shapes */
+  .mug{width:74px;height:78px;background:linear-gradient(150deg,#c9805f,#8f4c35);border-radius:14% 14% 20% 20%/12% 12% 24% 24%}
+  .cup{width:88px;height:60px;background:linear-gradient(150deg,#d99a77,#a95f40);border-radius:18% 18% 40% 40%/14% 14% 60% 60%}
+  .tumbler{width:64px;height:92px;background:linear-gradient(150deg,#a7b598,#6d7d5f);border-radius:16% 16% 22% 22%/10% 10% 18% 18%}
+  .bowl{width:104px;height:56px;background:linear-gradient(150deg,#9aa98a,#6d7d5f);border-radius:50% 50% 46% 46%/12% 12% 90% 90%}
+  .bowl-wide{width:128px;height:48px;background:linear-gradient(150deg,#efe4d3,#c2ab88);border-radius:50% 50% 46% 46%/14% 14% 92% 92%}
+  .plate{width:120px;height:26px;background:linear-gradient(150deg,#efe4d3,#cbb693);border-radius:50%/40%}
+  .platter{width:140px;height:22px;background:linear-gradient(150deg,#8f8678,#5f574b);border-radius:50%/42%}
+  .vase{width:62px;height:110px;background:linear-gradient(150deg,#c97b5c,#8f4c35);border-radius:50% 50% 40% 40%/14% 14% 70% 70%}
+  .vase-tall{width:56px;height:132px;background:linear-gradient(150deg,#a7b598,#5e6d51);border-radius:50% 50% 42% 42%/10% 10% 74% 74%}
+  .vase-round{width:96px;height:88px;background:linear-gradient(150deg,#e9dccb,#c0a988);border-radius:50% 50% 46% 46%/44% 44% 56% 56%}
+  .jug{width:80px;height:96px;background:linear-gradient(150deg,#8f8678,#5f574b);border-radius:46% 46% 42% 42%/30% 30% 62% 62%}
+  .jar{width:78px;height:84px;background:linear-gradient(150deg,#d99a77,#8f4c35);border-radius:38% 38% 40% 40%/26% 26% 52% 52%}
+  .teapot{width:98px;height:70px;background:linear-gradient(150deg,#c9805f,#8f4c35);border-radius:50% 50% 44% 44%/56% 56% 46% 46%}
+
+  .piece-info{padding:18px 20px 22px}
+  .piece-info h3{font-size:1.1rem;margin-bottom:4px}
+  .piece-info p{color:var(--ink-soft);font-size:.9rem}
+  .piece-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:12px;font-size:.85rem;
+  }
+  .price{font-weight:600;color:var(--clay-dark)}
+  .badge{
+    display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;padding:4px 10px;border-radius:999px;
+  }
+  .badge-one{background:var(--sand);color:var(--clay-dark);border:1px solid var(--line)}
+  .badge-run{background:#eef1e9;color:#5e6d51;border:1px solid #d5dcc9}
+  .badge-sold{background:#ece7e2;color:var(--ink-soft);border:1px solid var(--line)}
+  @media(max-width:860px){.grid-gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.grid-gallery{grid-template-columns:1fr}}
+
+  /* ---------- Note strip ---------- */
+  .note{
+    background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .note-inner{
+    max-width:760px;margin:0 auto;padding:0 24px;text-align:center;
+  }
+  .note h2{font-size:clamp(1.5rem,3vw,1.9rem);margin-bottom:14px}
+  .note p{color:var(--ink-soft);margin-bottom:12px}
+  .btn{
+    display:inline-block;padding:13px 28px;border-radius:999px;font-weight:600;
+    font-size:.98rem;transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--clay);color:#fff;box-shadow:0 4px 14px rgba(180,102,74,.3)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(180,102,74,.35)}
+  .btn-ghost{border:1.5px solid var(--clay);color:var(--clay-dark);margin-left:12px}
+  .btn-ghost:hover{background:var(--clay);color:#fff}
+  .note .btn{margin-top:14px}
+  @media(max-width:480px){.btn-ghost{margin-left:0;margin-top:10px}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#d9cfc7;padding:52px 0 32px}
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;
+  }
+  footer h4{font-family:'Fraunces',serif;color:#fff;font-size:1.05rem;margin-bottom:12px;font-weight:500}
+  footer p{font-size:.92rem;line-height:1.7}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:8px}
+  footer ul a{font-size:.92rem;transition:color .2s}
+  footer ul a:hover{color:#fff}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:14px}
+  .copyright{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    font-size:.85rem;color:#a89c92;text-align:center;
+  }
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/" aria-label="Kiln &amp; Clay Ceramics home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Kiln &amp; Clay
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery" class="active" aria-current="page">Gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <span class="kicker">The Full Collection</span>
+    <h1>The Gallery</h1>
+    <p>Everything here was thrown on the wheel and fired in our Portland studio. One-of-a-kind pieces are exactly that — once they're gone, they're gone. Limited runs return with each new firing, though never quite the same twice.</p>
+    <nav class="jump" aria-label="Gallery sections">
+      <a href="#mugs">Mugs &amp; Cups</a>
+      <a href="#bowls">Bowls &amp; Plates</a>
+      <a href="#vases">Vases &amp; Vessels</a>
+    </nav>
+  </div>
+
+  <!-- Mugs & Cups -->
+  <section id="mugs" aria-labelledby="mugs-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="mugs-title">Mugs &amp; Cups</h2>
+        <p>The workhorses of the studio — made to be reached for first thing every morning.</p>
+      </div>
+      <div class="grid-gallery">
+        <article class="piece">
+          <div class="piece-img p1" aria-hidden="true"><div class="mini mug"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Terra Mug</h3>
+            <p>Speckled stoneware with an iron-red glaze that breaks warm over the rim. Holds 12 oz.</p>
+            <div class="piece-meta"><span class="price">$38</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p6" aria-hidden="true"><div class="mini cup"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Kiln Tea Cup</h3>
+            <p>Handle-free and made to be cradled with both hands. Glazed in tones pulled from the wood fire.</p>
+            <div class="piece-meta"><span class="price">$32</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p2" aria-hidden="true"><div class="mini tumbler"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Alder Tumbler</h3>
+            <p>A tall, thin-walled tumbler in matte sage. Equally at home holding cold brew or paintbrushes.</p>
+            <div class="piece-meta"><span class="price">$34</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p9" aria-hidden="true"><div class="mini teapot"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Round-Belly Teapot</h3>
+            <p>Porcelain teapot with a pulled handle and a spout that actually pours cleanly. Steeps four cups.</p>
+            <div class="piece-meta"><span class="price">$120</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p8" aria-hidden="true"><div class="mini mug"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Harvest Mug</h3>
+            <p>A wider, shorter cousin of the Terra, dipped twice in an amber ash glaze. Holds 14 oz generously.</p>
+            <div class="piece-meta"><span class="price">$40</span><span class="badge badge-sold">Sold — more soon</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p5" aria-hidden="true"><div class="mini cup"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Espresso Pair</h3>
+            <p>Two small stoneware cups in charcoal slip, sized for a double shot and a quiet minute.</p>
+            <div class="piece-meta"><span class="price">$48 / pair</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bowls & Plates -->
+  <section id="bowls" aria-labelledby="bowls-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="bowls-title">Bowls &amp; Plates</h2>
+        <p>For the table, the counter, and the everyday. All dinnerware is food-safe, dishwasher-safe, and microwave-friendly.</p>
+      </div>
+      <div class="grid-gallery">
+        <article class="piece">
+          <div class="piece-img p2" aria-hidden="true"><div class="mini bowl"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Sage Nesting Bowls</h3>
+            <p>A set of three wheel-thrown bowls in matte sage, glazed inside and out. They stack like they were born together — because they were.</p>
+            <div class="piece-meta"><span class="price">$95 / set</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p4" aria-hidden="true"><div class="mini plate"></div></div>
+          <div class="piece-info">
+            <h3>Oat Dinner Plate</h3>
+            <p>Wide-rimmed stoneware plate in a creamy oat glaze with a raw clay foot. Table proud, seconds encouraged.</p>
+            <div class="piece-meta"><span class="price">$42</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p1" aria-hidden="true"><div class="mini bowl-wide"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Gathering Bowl</h3>
+            <p>A generous serving bowl in warm oat and honey tones, thrown from four pounds of clay. Built for pasta nights and big salads.</p>
+            <div class="piece-meta"><span class="price">$88</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p5" aria-hidden="true"><div class="mini platter"></div></div>
+          <div class="piece-info">
+            <h3>Slate Serving Platter</h3>
+            <p>A long, low platter in deep charcoal with a satin finish. Cheese boards have never looked this composed.</p>
+            <div class="piece-meta"><span class="price">$76</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p7" aria-hidden="true"><div class="mini bowl"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Morning Cereal Bowl</h3>
+            <p>Just deep enough, just wide enough. Glazed in a soft celadon that pools green at the bottom.</p>
+            <div class="piece-meta"><span class="price">$36</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p8" aria-hidden="true"><div class="mini plate"></div></div>
+          <div class="piece-info">
+            <h3>Side Plate, Amber Rim</h3>
+            <p>A smaller companion to the Oat Dinner Plate, banded with a hand-brushed amber rim. Sold singly or in fours.</p>
+            <div class="piece-meta"><span class="price">$28</span><span class="badge badge-sold">Sold — more soon</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vases & Vessels -->
+  <section id="vases" aria-labelledby="vases-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="vases-title">Vases &amp; Vessels</h2>
+        <p>Sculptural pieces where the glaze gets to show off. Most of these are one-offs — the kiln decides, and we don't argue.</p>
+      </div>
+      <div class="grid-gallery">
+        <article class="piece">
+          <div class="piece-img p3" aria-hidden="true"><div class="mini vase"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Ember Bud Vase</h3>
+            <p>Slim-necked porcelain vase with a warm gradient glaze from ember to cream. Best with a single stem.</p>
+            <div class="piece-meta"><span class="price">$54</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p2" aria-hidden="true"><div class="mini vase-tall"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Meadow Column Vase</h3>
+            <p>A tall, narrow vase in layered greens with drips that ran exactly where we hoped they would. Holds long stems with confidence.</p>
+            <div class="piece-meta"><span class="price">$92</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p4" aria-hidden="true"><div class="mini vase-round"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Moon Jar</h3>
+            <p>A round-bellied vessel in an unglazed exterior with a burnished finish. Quiet, heavy, and content to sit empty.</p>
+            <div class="piece-meta"><span class="price">$140</span><span class="badge badge-one">One of a kind</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p5" aria-hidden="true"><div class="mini jug"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Slate Pitcher</h3>
+            <p>A generous pour with a carved handle, finished in a deep charcoal slip. Works as hard as it looks.</p>
+            <div class="piece-meta"><span class="price">$84</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p9" aria-hidden="true"><div class="mini jar"><span></span></div></div>
+          <div class="piece-info">
+            <h3>Lidded Honey Jar</h3>
+            <p>Stoneware jar with a fitted lid and a rust-red glaze. Made for honey, salt, or small secrets.</p>
+            <div class="piece-meta"><span class="price">$58</span><span class="badge badge-run">Limited run</span></div>
+          </div>
+        </article>
+        <article class="piece">
+          <div class="piece-img p1" aria-hidden="true"><div class="mini vase"><span></span></div></div>
+          <div class="piece-info">
+            <h3>First Fire Vase</h3>
+            <p>Thrown the day we lit the new kiln, glazed in a blush pulled from that maiden firing. A studio favorite.</p>
+            <div class="piece-meta"><span class="price">$110</span><span class="badge badge-sold">Sold</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note strip -->
+  <section class="note" aria-labelledby="note-title" style="padding:66px 0">
+    <div class="note-inner">
+      <h2 id="note-title">See something you love?</h2>
+      <p>Every piece in the gallery lives on the shelves of our studio shop until it finds a home. We hold pieces for up to a week — just get in touch with the piece name, or stop by during studio hours to see them under real light.</p>
+      <p>Looking for something that isn't here? We take a small number of custom orders between firings.</p>
+      <a class="btn btn-primary" href="/contact">Ask About a Piece</a>
+      <a class="btn btn-ghost" href="/about">How We Make Them</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Kiln &amp; Clay Ceramics
+        </div>
+        <p>Handmade stoneware and porcelain, thrown, glazed, and fired in our Portland studio. Small batches, honest materials, and pieces made to be used every day.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>412 Alder Lane, Portland, OR</li>
+          <li><a href="tel:+15035550147">(503) 555-0147</a></li>
+          <li><a href="mailto:hello@kilnandclay.com">hello@kilnandclay.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Kiln &amp; Clay Ceramics. All pieces handmade — imperfections included, free of charge.</p>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
