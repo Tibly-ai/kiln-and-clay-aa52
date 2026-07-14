@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The story behind Kiln & Clay Ceramics — how a secondhand wheel in a garage grew into a working Portland pottery studio, and the craft that shapes every piece we fire.">
+<title>About — Kiln &amp; Clay Ceramics | Our Story, Our Maker, Our Craft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#b4664a;
+    --clay-dark:#8f4c35;
+    --cream:#faf6f0;
+    --sand:#f1e8dc;
+    --ink:#3a2f2a;
+    --ink-soft:#6f6259;
+    --sage:#8a9a7b;
+    --line:#e5d9ca;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.15}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;letter-spacing:.01em}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50% 50% 46% 46%/60% 60% 40% 40%;
+    background:linear-gradient(160deg,var(--clay) 0%,var(--clay-dark) 100%);
+    position:relative;flex-shrink:0;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;top:6px;left:8px;width:10px;height:5px;
+    border-radius:50%;background:rgba(255,255,255,.35);
+  }
+  nav ul{display:flex;gap:6px;list-style:none}
+  nav a{
+    padding:8px 14px;border-radius:999px;font-size:.95rem;font-weight:500;
+    color:var(--ink-soft);transition:background .2s,color .2s;
+  }
+  nav a:hover{background:var(--sand);color:var(--ink)}
+  nav a.active{background:var(--clay);color:#fff}
+  @media(max-width:620px){
+    .nav{flex-direction:column;gap:10px;padding:14px 16px}
+    nav a{padding:7px 11px;font-size:.9rem}
+  }
+
+  /* ---------- Page hero ---------- */
+  .page-hero{
+    background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%);
+    border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  .page-hero-inner{max-width:720px;margin:0 auto;padding:76px 24px 64px}
+  .kicker{
+    display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--clay-dark);
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;margin-bottom:20px;
+  }
+  .page-hero h1{font-size:clamp(2.2rem,4.8vw,3.1rem);margin-bottom:16px}
+  .page-hero p{color:var(--ink-soft);font-size:1.1rem}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-block;padding:13px 28px;border-radius:999px;font-weight:600;
+    font-size:.98rem;transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--clay);color:#fff;box-shadow:0 4px 14px rgba(180,102,74,.3)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(180,102,74,.35)}
+  .btn-ghost{border:1.5px solid var(--clay);color:var(--clay-dark);margin-left:12px}
+  .btn-ghost:hover{background:var(--clay);color:#fff}
+  @media(max-width:480px){.btn-ghost{margin-left:0;margin-top:10px}}
+
+  /* ---------- Sections ---------- */
+  section{padding:76px 0}
+  .section-head{text-align:center;max-width:620px;margin:0 auto 48px}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:12px}
+  .section-head p{color:var(--ink-soft)}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .story-grid h2{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:16px}
+  .story-grid p{color:var(--ink-soft);margin-bottom:16px}
+  .story-grid p:last-child{margin-bottom:0}
+  .story-art{
+    background:linear-gradient(165deg,#f4e9dc,#e3cfba);
+    border:1px solid var(--line);border-radius:var(--radius);
+    display:flex;justify-content:center;align-items:flex-end;gap:20px;
+    padding:56px 30px 48px;
+  }
+  .vessel{position:relative}
+  .vessel::after{
+    content:"";position:absolute;bottom:-14px;left:10%;right:10%;height:12px;
+    background:radial-gradient(ellipse at center,rgba(58,47,42,.18),transparent 70%);
+    border-radius:50%;
+  }
+  .vessel span{
+    position:absolute;top:14%;left:18%;width:26%;height:12%;
+    background:rgba(255,255,255,.32);border-radius:50%;filter:blur(2px);
+  }
+  .v1{
+    width:100px;height:150px;
+    background:linear-gradient(150deg,#c97b5c 0%,var(--clay-dark) 80%);
+    border-radius:48% 48% 44% 44%/26% 26% 66% 66%;
+  }
+  .v2{
+    width:80px;height:190px;
+    background:linear-gradient(150deg,#a7b598 0%,var(--sage) 20%,#6d7d5f 90%);
+    border-radius:50% 50% 42% 42%/16% 16% 74% 74%;
+  }
+  .v3{
+    width:108px;height:100px;
+    background:linear-gradient(150deg,#efe6d8 0%,#d8c8b2 85%);
+    border-radius:50% 50% 46% 46%/40% 40% 58% 58%;
+  }
+  @media(max-width:800px){.story-grid{grid-template-columns:1fr}}
+
+  /* Maker strip */
+  .maker{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .maker-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .maker-grid h2{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:16px}
+  .maker-grid p{color:var(--ink-soft);margin-bottom:16px}
+  .maker-portrait{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:40px 30px;text-align:center;
+  }
+  .portrait-mark{
+    width:120px;height:120px;margin:0 auto 20px;border-radius:50%;
+    background:linear-gradient(160deg,#c97b5c 0%,var(--clay-dark) 100%);
+    position:relative;
+  }
+  .portrait-mark::after{
+    content:"";position:absolute;top:20px;left:26px;width:34px;height:16px;
+    border-radius:50%;background:rgba(255,255,255,.32);filter:blur(2px);
+  }
+  .maker-portrait h3{font-size:1.3rem;margin-bottom:4px}
+  .maker-portrait p{color:var(--ink-soft);font-size:.92rem;margin-bottom:0}
+  .maker-quote{
+    margin-top:20px;padding-top:18px;border-top:1px dashed var(--line);
+    font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1.02rem;
+  }
+  @media(max-width:800px){.maker-grid{grid-template-columns:1fr}}
+
+  /* Craft process */
+  .process{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;transition:transform .2s,box-shadow .2s;
+  }
+  .step:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(58,47,42,.1)}
+  .step-num{
+    display:inline-block;font-family:'Fraunces',serif;font-size:1rem;font-weight:600;
+    color:var(--clay-dark);background:var(--sand);border:1px solid var(--line);
+    border-radius:999px;width:38px;height:38px;line-height:36px;text-align:center;
+    margin-bottom:14px;
+  }
+  .step h3{font-size:1.15rem;margin-bottom:8px}
+  .step p{color:var(--ink-soft);font-size:.95rem}
+  @media(max-width:700px){.process{grid-template-columns:1fr}}
+
+  /* Values */
+  .values{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .value{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .value h3{font-size:1.12rem;margin-bottom:8px;color:var(--clay-dark)}
+  .value p{color:var(--ink-soft);font-size:.95rem}
+  @media(max-width:800px){.values-grid{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta-band{text-align:center}
+  .cta-band h2{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:14px}
+  .cta-band p{color:var(--ink-soft);max-width:52ch;margin:0 auto 30px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#d9cfc7;padding:52px 0 32px}
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;
+  }
+  footer h4{font-family:'Fraunces',serif;color:#fff;font-size:1.05rem;margin-bottom:12px;font-weight:500}
+  footer p{font-size:.92rem;line-height:1.7}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:8px}
+  footer ul a{font-size:.92rem;transition:color .2s}
+  footer ul a:hover{color:#fff}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:14px}
+  .copyright{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    font-size:.85rem;color:#a89c92;text-align:center;
+  }
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/" aria-label="Kiln &amp; Clay Ceramics home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Kiln &amp; Clay
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/about" class="active" aria-current="page">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="kicker">Our Story</span>
+      <h1>Made slowly, on purpose.</h1>
+      <p>Kiln &amp; Clay is a one-maker pottery studio in Portland, Oregon. This is the story of how it started, who's behind the wheel, and why everything here takes exactly as long as it needs to.</p>
+    </div>
+  </div>
+
+  <!-- Story -->
+  <section aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <div>
+        <h2 id="story-title">It started with a $60 wheel and a stubborn streak</h2>
+        <p>In the winter of 2016, a secondhand potter's wheel appeared in a Craigslist listing three neighborhoods over. It wobbled, it squeaked, and it took up half the garage. It was perfect. The first few months produced mostly lopsided cylinders and a lot of reclaimed clay — but somewhere in that pile of failures was the beginning of a habit that refused to quit.</p>
+        <p>Within two years the garage had a small electric kiln, then a bigger one, then shelving in places shelving probably shouldn't go. Friends started asking to buy mugs. Then friends of friends. In 2019 we signed the lease on 412 Alder Lane, knocked out a wall, and moved the whole dusty operation into a proper studio with a showroom up front.</p>
+        <p>Today the studio fires over 1,200 pieces a year — still one wheel at a time, still glazed by hand, and still with the occasional lopsided cylinder that reminds us where we came from. That first $60 wheel? It sits by the front window. It still works. Mostly.</p>
+      </div>
+      <div class="story-art" aria-hidden="true">
+        <div class="vessel v1"><span></span></div>
+        <div class="vessel v2"><span></span></div>
+        <div class="vessel v3"><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maker -->
+  <section class="maker" aria-labelledby="maker-title">
+    <div class="wrap maker-grid">
+      <div class="maker-portrait">
+        <div class="portrait-mark" aria-hidden="true"></div>
+        <h3>Wren Calloway</h3>
+        <p>Founder, potter, chief kiln whisperer</p>
+        <p class="maker-quote">"A good pot should disappear into your morning. If you notice it, it should be because it feels right in your hand."</p>
+      </div>
+      <div>
+        <h2 id="maker-title">Meet the maker</h2>
+        <p>Wren came to clay the long way around — a decade in graphic design, a night class taken on a whim, and one very muddy evening that changed everything. What hooked her wasn't the finished pots. It was the wheel itself: the way clay demands your whole attention and gives you nothing until you learn to listen.</p>
+        <p>She apprenticed informally under two Oregon potters, spent a summer helping fire a wood kiln on the coast, and slowly traded pixels for porcelain. Her work leans quiet — soft profiles, honest weights, glazes pulled from the colors of the Pacific Northwest: iron red, moss, fog, and river stone.</p>
+        <p>Most days you'll find her at the wheel from early morning, trimming in the afternoon, and mixing glaze tests long after she promised herself she'd stop. Stop by the studio and she'll happily talk your ear off about shino glazes, kiln atmospheres, or why handles are the hardest part of any mug.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craft -->
+  <section aria-labelledby="craft-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="craft-title">The Craft: From Bag of Clay to Your Cupboard</h2>
+        <p>Every piece in the shop passes through the same eight hands-on stages. Start to finish, a single mug takes about three weeks. Here's where the time goes.</p>
+      </div>
+      <div class="process">
+        <article class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Wedging &amp; Weighing</h3>
+          <p>Each piece starts as a measured ball of stoneware or porcelain, wedged by hand to drive out air bubbles and align the clay. Skip this step and the kiln will remind you why it matters.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Throwing on the Wheel</h3>
+          <p>The heart of the process. Every form is thrown by hand — centered, opened, and pulled up in a few focused minutes. Small variations between pieces aren't flaws; they're fingerprints.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Trimming &amp; Handles</h3>
+          <p>Once leather-hard, each pot is flipped and trimmed to reveal its foot. Handles are pulled from wet clay, shaped by feel, and attached one at a time — the slowest, fussiest, most rewarding part.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">4</span>
+          <h3>Drying, Slowly</h3>
+          <p>Pieces rest under loose plastic for up to a week, drying evenly to bone-dry. Rush this stage and clay cracks. Pottery teaches patience whether you signed up for it or not.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">5</span>
+          <h3>Bisque Firing</h3>
+          <p>The first trip through the kiln, to around 1,830°F, turns fragile greenware into porous bisque — hard enough to handle, thirsty enough to drink up glaze.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">6</span>
+          <h3>Glazing by Hand</h3>
+          <p>We mix most of our glazes from raw materials — silica, feldspar, iron, ash. Each piece is dipped, poured, or brushed, then wiped clean at the foot so nothing sticks to the kiln shelf.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">7</span>
+          <h3>Glaze Firing</h3>
+          <p>The final firing reaches roughly 2,230°F over twelve hours. Inside, glaze melts into glass and fuses to the clay body. What comes out is always a small surprise — that's the fire's signature.</p>
+        </article>
+        <article class="step">
+          <span class="step-num" aria-hidden="true">8</span>
+          <h3>Sanding &amp; Sorting</h3>
+          <p>Every piece is unloaded, sanded smooth at the foot, checked against a warm mug of tea (quality control is delicious), and shelved in the showroom — or set aside if it doesn't meet the bar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values" aria-labelledby="values-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="values-title">What We Believe</h2>
+        <p>Three ideas shape everything that leaves this studio.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value">
+          <h3>Use it every day</h3>
+          <p>We don't make pottery for glass cabinets. Every piece is food safe, dishwasher safe, and made to survive real kitchens, real mornings, and real life. Good objects earn their keep.</p>
+        </div>
+        <div class="value">
+          <h3>Honest materials</h3>
+          <p>Regional clays, glazes mixed in-house from raw minerals, and no shortcuts we wouldn't be proud to explain. When you ask what something's made of, we can tell you — by the gram.</p>
+        </div>
+        <div class="value">
+          <h3>Imperfection included</h3>
+          <p>A throwing line, a glaze drip caught mid-melt, a kiln kiss where two pieces sat close — these are records of the making. We leave them in. Perfect is what machines are for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="wrap">
+      <h2 id="cta-title">Come see the story in person</h2>
+      <p>The showroom is open five days a week, and if you time it right you can watch a kiln get unloaded. Or browse what's fresh off the shelf from wherever you are.</p>
+      <a class="btn btn-primary" href="/gallery">Browse the Gallery</a>
+      <a class="btn btn-ghost" href="/contact">Visit the Studio</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Kiln &amp; Clay Ceramics
+        </div>
+        <p>Handmade stoneware and porcelain, thrown, glazed, and fired in our Portland studio. Small batches, honest materials, and pieces made to be used every day.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>412 Alder Lane, Portland, OR</li>
+          <li><a href="tel:+15035550147">(503) 555-0147</a></li>
+          <li><a href="mailto:hello@kilnandclay.com">hello@kilnandclay.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Kiln &amp; Clay Ceramics. All pieces handmade — imperfections included, free of charge.</p>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
