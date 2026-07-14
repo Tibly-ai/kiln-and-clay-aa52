@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Kiln & Clay Ceramics — find our Portland studio, check store hours, and send a purchase or commission inquiry. We answer every message ourselves.">
+<title>Contact — Kiln &amp; Clay Ceramics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#b4664a;
+    --clay-dark:#8f4c35;
+    --cream:#faf6f0;
+    --sand:#f1e8dc;
+    --ink:#3a2f2a;
+    --ink-soft:#6f6259;
+    --sage:#8a9a7b;
+    --line:#e5d9ca;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.15}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;letter-spacing:.01em}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50% 50% 46% 46%/60% 60% 40% 40%;
+    background:linear-gradient(160deg,var(--clay) 0%,var(--clay-dark) 100%);
+    position:relative;flex-shrink:0;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;top:6px;left:8px;width:10px;height:5px;
+    border-radius:50%;background:rgba(255,255,255,.35);
+  }
+  nav ul{display:flex;gap:6px;list-style:none}
+  nav a{
+    padding:8px 14px;border-radius:999px;font-size:.95rem;font-weight:500;
+    color:var(--ink-soft);transition:background .2s,color .2s;
+  }
+  nav a:hover{background:var(--sand);color:var(--ink)}
+  nav a.active{background:var(--clay);color:#fff}
+  @media(max-width:620px){
+    .nav{flex-direction:column;gap:10px;padding:14px 16px}
+    nav a{padding:7px 11px;font-size:.9rem}
+  }
+
+  /* ---------- Page hero ---------- */
+  .page-hero{
+    background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%);
+    border-bottom:1px solid var(--line);
+    text-align:center;
+    padding:68px 24px 60px;
+  }
+  .kicker{
+    display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--clay-dark);
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;margin-bottom:20px;
+  }
+  .page-hero h1{font-size:clamp(2.1rem,4.6vw,3rem);margin-bottom:16px}
+  .page-hero p{color:var(--ink-soft);font-size:1.1rem;max-width:56ch;margin:0 auto}
+
+  /* ---------- Sections ---------- */
+  section{padding:76px 0}
+  .section-head{text-align:center;max-width:620px;margin:0 auto 48px}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:12px}
+  .section-head p{color:var(--ink-soft)}
+
+  .btn{
+    display:inline-block;padding:13px 28px;border-radius:999px;font-weight:600;
+    font-size:.98rem;transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--clay);color:#fff;box-shadow:0 4px 14px rgba(180,102,74,.3);border:none;cursor:pointer;font-family:'Inter',sans-serif}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(180,102,74,.35)}
+
+  /* ---------- Visit cards ---------- */
+  .visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .visit-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 30px;
+  }
+  .visit-card h3{font-size:1.25rem;margin-bottom:14px}
+  .visit-card p{color:var(--ink-soft);margin-bottom:8px}
+  .visit-card a.plain{color:var(--clay-dark);font-weight:600}
+  .visit-card a.plain:hover{text-decoration:underline}
+  .hours{list-style:none;color:var(--ink-soft)}
+  .hours li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .hours li:last-child{border-bottom:none}
+  .hours span{font-weight:600;color:var(--ink)}
+  .note{
+    margin-top:14px;background:var(--sand);border:1px solid var(--line);
+    border-radius:10px;padding:12px 14px;font-size:.88rem;color:var(--ink-soft);
+  }
+  @media(max-width:860px){.visit-grid{grid-template-columns:1fr}}
+
+  /* decorative map placeholder */
+  .map-card{
+    background:linear-gradient(160deg,#eee7dd 0%,#dccfba 100%);
+    border:1px solid var(--line);border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:32px 30px;min-height:220px;
+    position:relative;overflow:hidden;
+  }
+  .map-card::before{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(rgba(58,47,42,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(58,47,42,.06) 1px,transparent 1px);
+    background-size:34px 34px;
+  }
+  .map-pin{
+    position:relative;z-index:1;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .pin-dot{
+    width:22px;height:22px;border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    background:var(--clay);box-shadow:0 4px 10px rgba(143,76,53,.4);
+  }
+  .map-pin p{color:var(--ink);font-weight:600;font-size:.95rem}
+  .map-pin small{color:var(--ink-soft);font-size:.85rem}
+
+  /* ---------- Contact form ---------- */
+  .form-section{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+  .form-intro h2{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:16px}
+  .form-intro p{color:var(--ink-soft);margin-bottom:16px}
+  .form-intro ul{list-style:none;margin-bottom:16px}
+  .form-intro li{
+    padding:10px 0 10px 30px;position:relative;
+    color:var(--ink-soft);border-bottom:1px dashed var(--line);font-size:.95rem;
+  }
+  .form-intro li:last-child{border-bottom:none}
+  .form-intro li::before{
+    content:"";position:absolute;left:2px;top:16px;
+    width:12px;height:12px;
+    border-radius:50% 50% 46% 46%/60% 60% 40% 40%;
+    background:linear-gradient(160deg,var(--clay),var(--clay-dark));
+  }
+  .form-intro li strong{color:var(--ink)}
+
+  form{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:38px 34px;
+  }
+  .field{margin-bottom:22px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  label{
+    display:block;font-weight:600;font-size:.9rem;margin-bottom:7px;
+  }
+  label small{font-weight:400;color:var(--ink-soft)}
+  input[type=text],input[type=email],input[type=tel],select,textarea{
+    width:100%;padding:12px 14px;
+    border:1.5px solid var(--line);border-radius:10px;
+    font-family:'Inter',sans-serif;font-size:.95rem;color:var(--ink);
+    background:var(--cream);
+    transition:border-color .2s,box-shadow .2s;
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--clay);
+    box-shadow:0 0 0 3px rgba(180,102,74,.15);
+  }
+  textarea{resize:vertical;min-height:140px}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .form-foot p{font-size:.85rem;color:var(--ink-soft);max-width:32ch}
+  @media(max-width:860px){.form-grid{grid-template-columns:1fr;gap:40px}}
+  @media(max-width:540px){.field-row{grid-template-columns:1fr}}
+
+  /* ---------- FAQ ---------- */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .faq-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px;
+  }
+  .faq-card h3{font-size:1.08rem;margin-bottom:10px}
+  .faq-card p{color:var(--ink-soft);font-size:.94rem}
+  .faq-card a.plain{color:var(--clay-dark);font-weight:600}
+  .faq-card a.plain:hover{text-decoration:underline}
+  @media(max-width:760px){.faq-grid{grid-template-columns:1fr}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#d9cfc7;padding:52px 0 32px}
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;
+  }
+  footer h4{font-family:'Fraunces',serif;color:#fff;font-size:1.05rem;margin-bottom:12px;font-weight:500}
+  footer p{font-size:.92rem;line-height:1.7}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:8px}
+  footer ul a{font-size:.92rem;transition:color .2s}
+  footer ul a:hover{color:#fff}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:14px}
+  .copyright{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    font-size:.85rem;color:#a89c92;text-align:center;
+  }
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/" aria-label="Kiln &amp; Clay Ceramics home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Kiln &amp; Clay
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <span class="kicker">Get in touch</span>
+    <h1>Come by, call, or write us a note.</h1>
+    <p>Whether you've spotted a piece in the gallery, want something made just for you, or simply need directions to the studio — we'd love to hear from you. Every message is read and answered by the people who made the pots.</p>
+  </div>
+
+  <!-- Location & hours -->
+  <section aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="visit-title">Find the Studio</h2>
+        <p>We're a short walk from the Alder Lane farmers market, in the brick building with the terracotta door. Follow the smell of the kiln.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Store &amp; Studio</h3>
+          <p>412 Alder Lane<br>Portland, OR 97214</p>
+          <p>Phone: <a class="plain" href="tel:+15035550147">(503) 555-0147</a></p>
+          <p>Email: <a class="plain" href="mailto:hello@kilnandclay.com">hello@kilnandclay.com</a></p>
+          <div class="note">Street parking is free on Alder Lane; bike racks sit right outside the door. The showroom and studio floor are wheelchair accessible.</div>
+        </div>
+        <div class="visit-card">
+          <h3>Store Hours</h3>
+          <ul class="hours">
+            <li>Tuesday – Friday <span>10am – 6pm</span></li>
+            <li>Saturday <span>9am – 5pm</span></li>
+            <li>Sunday <span>11am – 4pm</span></li>
+            <li>Monday <span>Closed (firing day)</span></li>
+          </ul>
+          <div class="note">Kiln unloadings happen most Tuesday mornings — arrive by 10:30am and you can watch the shelves come out still warm.</div>
+        </div>
+        <div class="map-card" role="img" aria-label="Map showing the studio location at 412 Alder Lane, Portland, Oregon">
+          <div class="map-pin">
+            <span class="pin-dot" aria-hidden="true"></span>
+            <p>412 Alder Lane</p>
+            <small>Two blocks east of the farmers market,<br>next to Alder Lane Coffee Roasters</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="form-section" aria-labelledby="form-title">
+    <div class="wrap form-grid">
+      <div class="form-intro">
+        <h2 id="form-title">Purchase &amp; Commission Inquiries</h2>
+        <p>Most pieces in the gallery are one-of-a-kind, so if something caught your eye, mention it by name and we'll set it aside while we sort out shipping or pickup.</p>
+        <p>Commissions are our favorite kind of challenge. Here's what helps us give you a quick, useful answer:</p>
+        <ul>
+          <li><strong>The piece or set</strong> you have in mind — a mug run for a café, dinnerware for eight, a single vase for a wedding.</li>
+          <li><strong>Colors and finishes</strong> you're drawn to. Photos from our gallery or elsewhere are welcome references.</li>
+          <li><strong>Your timeline.</strong> Commissions typically take 4–8 weeks, since every piece is thrown, dried, glazed, and fired twice.</li>
+        </ul>
+        <p>We reply to every inquiry within two business days — usually sooner, unless the kiln has other plans.</p>
+      </div>
+
+      <form action="/contact" method="post" aria-labelledby="form-title">
+        <div class="field field-row">
+          <div>
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Alvarez">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="field field-row">
+          <div>
+            <label for="phone">Phone <small>(optional)</small></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(503) 555-0000">
+          </div>
+          <div>
+            <label for="topic">What's this about?</label>
+            <select id="topic" name="topic" required>
+              <option value="" selected disabled>Choose one…</option>
+              <option value="purchase">Purchasing a gallery piece</option>
+              <option value="commission">Commissioning custom work</option>
+              <option value="wholesale">Wholesale for a shop or café</option>
+              <option value="visit">Planning a studio visit</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="piece">Piece name or reference <small>(if you have one)</small></label>
+          <input type="text" id="piece" name="piece" placeholder="e.g. Ember Bud Vase, or 'set of six Terra Mugs'">
+        </div>
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you're looking for — sizes, colors, quantity, timeline, or just the questions on your mind."></textarea>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          <p>We'll only use your details to reply. No newsletters unless you ask.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Quick answers -->
+  <section aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title">Before You Write — Quick Answers</h2>
+        <p>The questions we hear most often at the counter.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3>Do you ship?</h3>
+          <p>Yes — anywhere in the US. Every piece is double-boxed and cushioned by hand, and we've had exactly one break in transit since 2019 (fully refunded, still mourned). Shipping is quoted with your inquiry.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Can I hold a piece while I decide?</h3>
+          <p>We'll happily set a gallery piece aside for 48 hours. Just mention it by name in the form above or call the studio during <a class="plain" href="#visit-title">store hours</a>.</p>
+        </div>
+        <div class="faq-card">
+          <h3>How do commission deposits work?</h3>
+          <p>Once we agree on a design and quote, a 50% deposit gets your piece on the wheel. The balance is due when it comes out of the final firing and you've approved photos.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Do you offer classes or studio tours?</h3>
+          <p>Not classes yet, but we host open-studio days on the first Saturday of each month — watch throwing demos, see the kilns, and ask us anything. Details are posted <a class="plain" href="/about">on our About page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Kiln &amp; Clay Ceramics
+        </div>
+        <p>Handmade stoneware and porcelain, thrown, glazed, and fired in our Portland studio. Small batches, honest materials, and pieces made to be used every day.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li>412 Alder Lane, Portland, OR</li>
+          <li><a href="tel:+15035550147">(503) 555-0147</a></li>
+          <li><a href="mailto:hello@kilnandclay.com">hello@kilnandclay.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Kiln &amp; Clay Ceramics. All pieces handmade — imperfections included, free of charge.</p>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
